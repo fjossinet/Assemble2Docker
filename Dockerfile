@@ -28,4 +28,4 @@ RUN ./configure --with-vrna=/usr/local/ --without-perl --without-forester --with
 RUN make && make install && make clean
 ENV LD_LIBRARY_PATH /usr/local/lib
 
-ENV PATH /tmp/RNAVIEW/bin:/foldalign.2.1.1/bin:$PATH
+ENV PATH /RNAVIEW/bin:/foldalign.2.1.1/bin:$PATH
