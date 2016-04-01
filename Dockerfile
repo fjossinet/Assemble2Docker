@@ -19,6 +19,7 @@ RUN make && make install && make clean
 WORKDIR /
 RUN wget -qO foldalign.2.1.1.tar.gz "http://dl.dropbox.com/u/3753967/algorithms/foldalign.2.1.1.tar.gz" && tar -xzvf foldalign.2.1.1.tar.gz
 WORKDIR foldalign.2.1.1
+RUN make
 
 #locarna
 WORKDIR /
@@ -29,3 +30,5 @@ RUN make && make install && make clean
 ENV LD_LIBRARY_PATH /usr/local/lib
 
 ENV PATH /RNAVIEW/bin:/foldalign.2.1.1/bin:$PATH
+
+WORKDIR /

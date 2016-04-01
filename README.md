@@ -11,8 +11,8 @@ Usage
 Examples
 --------
 
-    docker run -v /Users/fjossinet/samples/:/data fjossinet/assemble2docker foldalign /data/test.fasta
     docker run -v /Users/fjossinet/samples/:/data fjossinet/assemble2docker bash -c 'RNAfold < /data/test.fasta'
     docker run -v /Users/fjossinet/samples/:/data fjossinet/assemble2docker bash -c 'RNAsubopt -e 2 < /data/test.fasta'
     docker run -v /Users/fjossinet/samples/:/data fjossinet/assemble2docker bash -c 'RNAplot -o svg < /data/test.vienna ; more *.svg'
+    docker run -v /Users/fjossinet/samples/:/data fjossinet/assemble2docker foldalign /data/test.fasta
     docker run -v /Users/fjossinet/samples/:/data fjossinet/assemble2docker rnaview -p /data/test.pdb
