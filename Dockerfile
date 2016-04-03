@@ -1,6 +1,6 @@
-FROM debian:stable
+FROM continuumio/miniconda
 MAINTAINER Fabrice Jossinet (fjossinet@gmail.com)
-RUN apt-get update && apt-get install -y openssl wget build-essential
+RUN apt-get update && apt-get install -y git wget build-essential
 
 #rnaview
 RUN wget -qO RNAVIEW.tar.gz "https://dl.dropboxusercontent.com/u/3753967/algorithms/RNAVIEW.tar.gz" && tar -xzvf RNAVIEW.tar.gz
@@ -29,6 +29,12 @@ RUN ./configure --with-vrna=/usr/local/ --without-perl --without-forester --with
 RUN make && make install && make clean
 ENV LD_LIBRARY_PATH /usr/local/lib
 
-ENV PATH /RNAVIEW/bin:/foldalign.2.1.1/bin:$PATH
-
 WORKDIR /
+
+RUN conda config --set always_yes TRUE && conda install pandas pymongo ujson tornado
+RUN git clone https://github.com/JossinetLab/RNA-Science-Toolbox.git
+
+ENV PYTHONPATH $PYTHONPATH:/RNA-Science-Toolbox
+ENV PATH /RNAVIEW/bin:/foldalign.2.1.1/bin:/RNA-Science-Toolbox/pyrna/:/RNA-Science-Toolbox/files/scripts/python/:$PATH
+
+EXPOSE 8080
