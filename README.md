@@ -45,6 +45,6 @@ Once done, launch the embedded server to deploy the Web services:
 
 If you're not using Linux, this command should be:
 
-    docker run fjossinet/assemble2 import_3Ds.py -rna3dhub -canonical_only -annotate -mh your_vm_IP
+    docker run -p 8080:8080 -d fjossinet/assemble2 server.py -mh your_vm_IP
 
 Launch [Assemble2](http://www.bioinformatics.org/assemble/). In "File -> Configure -> Assemble2", add the following Web services address: http://127.0.0.1:8080. If you're not using Linux, this address should be http://your_vm_IP:8080.
