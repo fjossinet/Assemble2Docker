@@ -44,6 +44,6 @@ Do the same for the non-redundant database [RNA 3D Hub](http://rna.bgsu.edu/rna3
 
 Once done, launch the embedded server to deploy the Web services:
 
-    docker run fjossinet/assemble2 import_3Ds.py -rna3dhub -canonical_only -annotate -mh YOUR_IP_ADRESS
+    docker run -p 8080:8080 -d fjossinet/assemble2 server.py -mh your_vm_IP
 
 Launch [Assemble2](http://www.bioinformatics.org/assemble/). In "File -> Configure -> Assemble2", add the following Web services address: http://YOUR_IP_ADRESS:8080.
