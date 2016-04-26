@@ -3,8 +3,8 @@ Assemble2Docker
 
 A docker image containing an [RNA Science ToolBox](http://fjossinet.github.io/RNA-Science-Toolbox/) to be used with the tool [Assemble2](http://www.bioinformatics.org/assemble/).
 
-Usage
------
+Installation and Configuration
+------------------------------
 
 First you need to install Docker on your computer. You can find all the details [here](https://docs.docker.com/engine/installation/).
 
@@ -33,6 +33,19 @@ Now, get our docker image:
     docker pull fjossinet/assemble2
 
 This image is based on [continuumio/miniconda](https://github.com/ContinuumIO/docker-images/tree/master/miniconda). It contains an RNA Science Toobox with all its Python dependencies (pandas, pymongo,...) and a bunch of RNA algorithms compiled and configured (Vienna RNA package, RNAView, MLocarna,...).
+
+Usage
+-----
+
+This Docker container allows you to use the RNA algorithms directly or to deploy them as Web services to be consumed from other tools like Assemble2.
+
+### Use RNA algorithms
+
+For example, to use the mlocarna algorithm, you can type something like the following:
+
+docker run -v /Users/fjossinet/my_files/:/data fjossinet/assemble2 mlocarna /data/my_sequences.fasta
+
+### Deploy the RNA algorithms as Web services
 
 Use it first to feed your MongoDB database with fragments extracted from 3D structures from the PDB:
 
