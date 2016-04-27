@@ -41,9 +41,9 @@ This Docker container allows you to use the RNA algorithms directly or to deploy
 
 ### Use RNA algorithms
 
-For example, to use the mlocarna algorithm, you can type something like the following:
+For example, to use the mlocarna algorithm, you should type something like:
 
-docker run -v /Users/fjossinet/my_files/:/data fjossinet/assemble2 mlocarna /data/my_sequences.fasta
+     docker run -v /Users/fjossinet/my_files/:/data fjossinet/assemble2 mlocarna /data/my_sequences.fasta
 
 ### Deploy the RNA algorithms as Web services
 
