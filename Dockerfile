@@ -31,10 +31,4 @@ ENV LD_LIBRARY_PATH /usr/local/lib
 
 WORKDIR /
 
-RUN conda config --set always_yes TRUE && conda install pandas pymongo ujson tornado
-RUN git clone https://github.com/JossinetLab/RNA-Science-Toolbox.git
-
-ENV PYTHONPATH $PYTHONPATH:/RNA-Science-Toolbox
-ENV PATH /RNAVIEW/bin:/foldalign.2.1.1/bin:/RNA-Science-Toolbox/pyrna/:/RNA-Science-Toolbox/files/scripts/python/:$PATH
-
-EXPOSE 8080
+ENV PATH /RNAVIEW/bin:/foldalign.2.1.1/bin:$PATH
